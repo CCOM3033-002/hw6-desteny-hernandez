@@ -15,16 +15,16 @@ double get_largo();
 double get_ancho();
 
 bool inputValidation(double); // input validation para los numeros que el usuario escoga
-bool inputValidation(char);	// input validation para las selecciones hechas
+bool inputValidation(char);			// input validation para las selecciones hechas
 
 double volumen(double, double); // volumen del cilindro
-double area(double, double);	  // area del cilindro
+double area(double, double);				// area del cilindro
 
 double volumen(double); // volumen de la esfera
-double area(double);    // area de la esfera
+double area(double);				// area de la esfera
 
 double volumen(double, double, double); // volumen de la prisma rectangular
-double area(double, double, double);	// area de la prisma rectangular
+double area(double, double, double);				// area de la prisma rectangular
 
 const double pi = 3.14159; // constante global PI
 
@@ -32,15 +32,15 @@ double radio, altura, largo, ancho; // declaramos variables para las figuras 3D
 
 int main()
 {
-	cout << "Este programa calcula el volumen y el area de la superficie de tres figuras." << endl;
-	cout << endl;
+ cout << "Este programa calcula el volumen y el area de la superficie de tres figuras." << endl;
+ cout << endl;
 
-	bool inputValido; // declaramos un flag para validar inputs.
+ bool inputValido; // declaramos un flag para validar inputs.
 
-	char seleccionMenu1, seleccionMenu2; // declaramos variable de seleccion para el menu1 y menu2
+ char seleccionMenu1, seleccionMenu2; // declaramos variable de seleccion para el menu1 y menu2
 
-	do
-	{
+ do
+ {
 		// menu1: le pedimos al usuario que seleccione una de tres figuras disponibles
 
 		cout << "Escoga una figura:\n \ta. Cilindro\n \tb. Esfera\n \tc. Prisma rectangular" << endl;
@@ -54,21 +54,21 @@ int main()
 
 			do
 			{
-				seleccionMenu2 = menu2_seleccion();		  // desplega el menu 2 para seleccionar entre 'a. Volumen' y 'b. Area'
+				seleccionMenu2 = menu2_seleccion();												// desplega el menu 2 para seleccionar entre 'a. Volumen' y 'b. Area'
 				inputValido = inputValidation(seleccionMenu2); // input validation de la seleccion
-			} while (!inputValido);						  // se itera si la seleccion no fue ni 'a' ni 'b'
+			} while (!inputValido);																									// se itera si la seleccion no fue ni 'a' ni 'b'
 
 			do
 			{
-				radio = get_radio('a');			   // le pide al usuario el radio del Cilindro
+				radio = get_radio('a');															// le pide al usuario el radio del Cilindro
 				inputValido = inputValidation(radio); // inputValidation del 'radio'
-			} while (!inputValido);				   // se itera si 'radio' no es valido
+			} while (!inputValido);																// se itera si 'radio' no es valido
 
 			do
 			{
-				altura = get_altura('a');		    // le pide al usuario la altura del Cilindro
+				altura = get_altura('a');														// le pide al usuario la altura del Cilindro
 				inputValido = inputValidation(altura); // inputValidation de la altura
-			} while (!inputValido);				    // se itera si la 'altura' no es valida
+			} while (!inputValido);																	// se itera si la 'altura' no es valida
 
 			switch (seleccionMenu2) // dependiendo de la seleccion en el menu2 se desplega en pantalla el resultaldo de volumen() o area()
 			{
@@ -86,15 +86,15 @@ int main()
 
 			do
 			{
-				seleccionMenu2 = menu2_seleccion();		  // desplega el menu 2 para seleccionar entre 'a. Volumen' y 'b. Area'
+				seleccionMenu2 = menu2_seleccion();												// desplega el menu 2 para seleccionar entre 'a. Volumen' y 'b. Area'
 				inputValido = inputValidation(seleccionMenu2); // input validation de la seleccion
-			} while (!inputValido);						  // se itera si la seleccion no fue ni 'a' ni 'b'
+			} while (!inputValido);																									// se itera si la seleccion no fue ni 'a' ni 'b'
 
 			do
 			{
-				radio = get_radio('b');			   // le pide al usuario el radio de la Esfera
+				radio = get_radio('b');															// le pide al usuario el radio de la Esfera
 				inputValido = inputValidation(radio); // inputValidation del 'radio'
-			} while (!inputValido);				   // se itera si 'radio' no es valido
+			} while (!inputValido);																// se itera si 'radio' no es valido
 
 			switch (seleccionMenu2) // dependiendo de la seleccion en el menu2 se desplega en pantalla el resultaldo de volumen() o area()
 			{
@@ -110,27 +110,27 @@ int main()
 		case 'c': // c. Prisma Rectangular
 			do
 			{
-				seleccionMenu2 = menu2_seleccion();		  // desplega el menu 2 para seleccionar entre 'a. Volumen' y 'b. Area'
+				seleccionMenu2 = menu2_seleccion();												// desplega el menu 2 para seleccionar entre 'a. Volumen' y 'b. Area'
 				inputValido = inputValidation(seleccionMenu2); // input validation de la seleccion
-			} while (!inputValido);						  // se itera si la seleccion no fue ni 'a' ni 'b'
+			} while (!inputValido);																									// se itera si la seleccion no fue ni 'a' ni 'b'
 
 			do
 			{
-				altura = get_altura('c');		    // le pide al usuario la altura de la Prisma Rectangular
+				altura = get_altura('c');														// le pide al usuario la altura de la Prisma Rectangular
 				inputValido = inputValidation(altura); // inputValidation de la altura
-			} while (!inputValido);				    // se itera si la 'altura' no es valida
+			} while (!inputValido);																	// se itera si la 'altura' no es valida
 
 			do
 			{
-				largo = get_largo();			   // le pide al usuario el largo de la Prisma Rectangular
+				largo = get_largo();																		// le pide al usuario el largo de la Prisma Rectangular
 				inputValido = inputValidation(largo); // inputValidation del 'largo'
-			} while (!inputValido);				   // se itera si 'largo' no es valido
+			} while (!inputValido);																// se itera si 'largo' no es valido
 
 			do
 			{
-				ancho = get_ancho();			   // le pide al usuario el ancho de la Prisma Rectangular
+				ancho = get_ancho();																		// le pide al usuario el ancho de la Prisma Rectangular
 				inputValido = inputValidation(ancho); // inputValidation del 'ancho'
-			} while (!inputValido);				   // se itera si 'ancho' no es valido
+			} while (!inputValido);																// se itera si 'ancho' no es valido
 
 			switch (seleccionMenu2) // dependiendo de la seleccion en el menu2 se desplega en pantalla el resultaldo de volumen() o area()
 			{
@@ -148,8 +148,8 @@ int main()
 			inputValido = false; // el input del menu 1 fue invalido
 			cout << "\nSu seleccion fue incorrecta... intente denuevo." << endl;
 		}
-	} while (!inputValido); // se itera si el input del menu 1 fue invalido
-	return 0;
+ } while (!inputValido); // se itera si el input del menu 1 fue invalido
+ return 0;
 }
 
 // definiciones de funciones
@@ -159,10 +159,10 @@ int main()
 // output: caracter con la la seleccion del menu2
 char menu2_seleccion()
 {
-	cout << "\nescoga entre las siguientes opciones: \n \ta. Volumen \n \tb. Area de la superficie. \n Seleccion: ";
-	char seleccion;   // declaramos variable para la seleccion
-	cin >> seleccion; // le pide al usuario su 'seleccion'
-	return seleccion; // retorna el caracter escrito por el usuario
+ cout << "\nescoga entre las siguientes opciones: \n \ta. Volumen \n \tb. Area de la superficie. \n Seleccion: ";
+ char seleccion;			// declaramos variable para la seleccion
+ cin >> seleccion; // le pide al usuario su 'seleccion'
+ return seleccion; // retorna el caracter escrito por el usuario
 }
 
 // uso: valida el input de la seleccion del menu2
@@ -170,11 +170,11 @@ char menu2_seleccion()
 // output: dato booleano
 bool inputValidation(char seleccion)
 {
-	if ((seleccion == 'a') || (seleccion == 'b')) // input valido si es 'a' o 'b'
+ if ((seleccion == 'a') || (seleccion == 'b')) // input valido si es 'a' o 'b'
 		return true;
-	// else el input es invalido
-	cout << "\nSeleccion incorrecta. ";
-	return false;
+ // else el input es invalido
+ cout << "\nSeleccion incorrecta. ";
+ return false;
 }
 
 // uso: valida el input de numeros entrados
@@ -182,11 +182,11 @@ bool inputValidation(char seleccion)
 // output: dato booleano
 bool inputValidation(double num)
 {
-	if (num >= 0) // input valido si no es negativo
+ if (num >= 0) // input valido si no es negativo
 		return true;
-	// else el input es invalido
-	cout << "\nNumero no puede ser negativo. ";
-	return false;
+ // else el input es invalido
+ cout << "\nNumero no puede ser negativo. ";
+ return false;
 }
 
 // uso: le pide al usuario el radio, dependiendo de la figura seleccionada en el menu1
@@ -194,18 +194,18 @@ bool inputValidation(double num)
 // output: el radio
 double get_radio(char seleccionMenu1)
 {
-	switch (seleccionMenu1) // se toma en cuenta la seleccion del usuario en el menu1
-	{
-	case 'a': // a. Cilindro...
+ switch (seleccionMenu1) // se toma en cuenta la seleccion del usuario en el menu1
+ {
+ case 'a': // a. Cilindro...
 		cout << "\nEntre el radio del cilindro: ";
 		break;
 
-	case 'b': // b. Esfera...
+ case 'b': // b. Esfera...
 		cout << "\nEntre el radio de la esfera: ";
 		break;
-	}
-	cin >> radio; // se le pide el 'radio' al usuario
-	return radio;
+ }
+ cin >> radio; // se le pide el 'radio' al usuario
+ return radio;
 }
 
 // uso: le pide al usuario la altura, dependiendo de la figura seleccionada en el menu1
@@ -213,18 +213,18 @@ double get_radio(char seleccionMenu1)
 // output: la altura
 double get_altura(char seleccionMenu1) // cilindro y la prisma rectangular
 {
-	switch (seleccionMenu1) // se toma en cuenta la seleccion del usuario en el menu1
-	{
-	case 'a': // a. Cilindro
+ switch (seleccionMenu1) // se toma en cuenta la seleccion del usuario en el menu1
+ {
+ case 'a': // a. Cilindro
 		cout << "Entre la altura del cilindro: ";
 		break;
 
-	case 'c': // c. Prisma Rectangular
+ case 'c': // c. Prisma Rectangular
 		cout << "\nEntre la altura de la prisma rectangular: ";
 		break;
-	}
-	cin >> altura; // se le pide la 'altura' al usuario
-	return altura;
+ }
+ cin >> altura; // se le pide la 'altura' al usuario
+ return altura;
 }
 
 // uso: le pide al usuario el largo de la prisma rectangular
@@ -232,9 +232,9 @@ double get_altura(char seleccionMenu1) // cilindro y la prisma rectangular
 // output: el largo
 double get_largo() // la prisma rectangular
 {
-	cout << "Entre el largo de la prisma rectangular: ";
-	cin >> largo; // se le pide el 'largo' al usuario
-	return largo;
+ cout << "Entre el largo de la prisma rectangular: ";
+ cin >> largo; // se le pide el 'largo' al usuario
+ return largo;
 }
 
 // uso: le pide al usuario el ancho de la prisma rectangular
@@ -242,9 +242,9 @@ double get_largo() // la prisma rectangular
 // output: el ancho
 double get_ancho() // la prisma rectangular
 {
-	cout << "Entre el ancho de la prisma rectangular: ";
-	cin >> ancho; // se le pide el 'ancho' al usuario
-	return ancho;
+ cout << "Entre el ancho de la prisma rectangular: ";
+ cin >> ancho; // se le pide el 'ancho' al usuario
+ return ancho;
 }
 
 // uso: calcula el volumen de un cilindro
@@ -252,8 +252,8 @@ double get_ancho() // la prisma rectangular
 // output: el volumen del cilindro
 double volumen(double radio, double altura)
 {
-	double result = pi * altura * (radio * radio);
-	return result;
+ double result = pi * altura * pow(radio, 2);
+ return result;
 }
 
 // uso: calcula el area de un cilindro
@@ -261,8 +261,8 @@ double volumen(double radio, double altura)
 // output: el area de la superficie de un cilindro
 double area(double radio, double altura)
 {
-	double result = 2 * pi * radio * altura + 2 * pi * (radio * radio);
-	return result;
+ double result = 2 * pi * radio * altura + 2 * pi * pow(radio, 2);
+ return result;
 }
 
 // uso: calcula el volumen de la esfera
@@ -270,8 +270,8 @@ double area(double radio, double altura)
 // output: el volumen de la esfera
 double volumen(double radio)
 {
-	double result = (4.0 / 3.0) * pi * (radio * radio * radio);
-	return result;
+ double result = (4.0 / 3.0) * pi * pow(radio, 3);
+ return result;
 }
 
 // uso: calcula el area de la esfera
@@ -279,8 +279,8 @@ double volumen(double radio)
 // output: el area de la esfera
 double area(double radio)
 {
-	double result = 4 * pi * (radio * radio);
-	return result;
+ double result = 4 * pi * pow(radio, 2);
+ return result;
 }
 
 // uso: calcula el volumen de la prisma rectangular
@@ -288,8 +288,8 @@ double area(double radio)
 // output: el volumen
 double volumen(double altura, double largo, double ancho)
 {
-	double result = altura * largo * ancho;
-	return result;
+ double result = altura * largo * ancho;
+ return result;
 }
 
 // uso: calcula el area de la prisma rectangular
@@ -297,6 +297,6 @@ double volumen(double altura, double largo, double ancho)
 // output: el area
 double area(double altura, double largo, double ancho)
 {
-	double result = 2 * (largo * ancho + largo * altura + ancho * altura);
-	return result;
+ double result = 2 * (largo * ancho + largo * altura + ancho * altura);
+ return result;
 }
